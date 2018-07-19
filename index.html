@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>id-insetos</title>
+    <style type="text/css">
+    body {background-color: #FFF; text-align: center; margin-bottom: 10px auto;}
+    .container {position: relative; overflow: hidden; width: 859px; margin:10px auto;}
+    .m {position: absolute;right:-900px; top: 100px; transition: all 1s ease;}
+    .m.active {right:5px;}
+    .l {}
+    .b {margin-top: 4em;}
+    .index {width: 100%; max-width:859px; transition: all 1s linear;}
+    .disabled {opacity: 0.1;}
+	</style>
+</head>
+<body>
+	<div id="app" class="container">
+		<img src="i/i01.png" onclick="e(1);" id="index" class="index" />
+		<img src="i/i02.png" class="m" id="m" onclick="e(2);" />
+		<img src="i/i03.png" class="m" id="l" onclick="e(3);" />
+		<img src="i/i04.png" class="m" id="b" onclick="e(0);" />
+	</div>
+	<script type="text/javascript">
+		function e(p) {
+			if (p == 1) {
+				document.getElementById('m').setAttribute('class','m active');
+				document.getElementById('index').setAttribute('class','index disabled');
+			} else if (p == 2) {
+				document.getElementById('l').setAttribute('class','m l active');
+				document.getElementById('m').setAttribute('class','m');
+			} else if (p == 3) {
+				document.getElementById('b').setAttribute('class','m b active');
+				document.getElementById('l').setAttribute('class','m l');
+				document.getElementById('m').setAttribute('class','m');
+			} else if (p == 0) {
+				document.getElementById('m').setAttribute('class','m');
+				document.getElementById('l').setAttribute('class','m l');
+				document.getElementById('b').setAttribute('class','m b');
+				document.getElementById('index').setAttribute('class','index');
+			} else {
+				document.getElementById('m').setAttribute('class','m');
+			}
+		}
+	</script>
+</body>
+</html>
