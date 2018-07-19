@@ -1,7 +1,7 @@
 // teste 12
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('video-store').then(function(cache) {
+   caches.open('video-stor').then(function(cache) {
      return cache.addAll([
        '/insetos/',
        '/insetos/index.html',
