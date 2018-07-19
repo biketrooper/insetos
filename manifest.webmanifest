@@ -1,7 +1,7 @@
 {
   "background_color": "34b049",
   "description": "Identificação de insetos ocorrentes na lavoura",
-  "display": "fullscreen",
+  "display": "minimal-ui",
   "lang": "pt-br",
   "icons": [
     {
