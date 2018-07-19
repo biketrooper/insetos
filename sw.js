@@ -1,7 +1,7 @@
 // teste 12
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('video-stor').then(function(cache) {
+   caches.open('insetos').then(function(cache) {
      return cache.addAll([
        '/insetos/',
        '/insetos/index.html',
@@ -17,5 +17,22 @@ self.addEventListener('fetch', function(e) {
     caches.match(e.request).then(function(response) {
       return response || fetch(e.request);
     })
+  );
+});
+
+this.addEventListener("activate", event => {
+  var cacheWhitelist = ["insetos"];
+
+  event.waitUntil(
+    caches.keys().then(
+      keyList => {
+        return Promise.all(
+          keyList.map( key => {
+            if (cacheWhitelist.indexOf(key) === -1) {
+              return caches.delete(key);
+            }
+          })
+        );
+     })
   );
 });
