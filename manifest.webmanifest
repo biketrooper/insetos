@@ -1,0 +1,15 @@
+{
+  "background_color": "34b049",
+  "description": "Identificação de insetos ocorrentes na lavoura",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "i/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Insetos ID",
+  "short_name": "InsetosID",
+  "start_url": "index.html"
+}
